@@ -227,25 +227,29 @@ body{
 @media(max-width:900px){.hero .art-frame{transform:none}.card-tile:nth-child(n){transform:none}.card-tile:hover{transform:translateY(-4px)!important}}
 
 
-/* Interactive opening invitation */
+/* Refined, reliable envelope-opening experience */
 body.invite-locked{overflow:hidden}
-.opening-screen{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 30%,rgba(255,235,196,.95),rgba(93,18,37,.97) 65%,#260912);transition:opacity .85s ease,visibility .85s ease}
-.opening-screen::before,.opening-screen::after{content:"✦  ❋  ✦";position:absolute;color:#e8c77e;letter-spacing:1.5rem;font-size:clamp(18px,3vw,30px);opacity:.6;animation:ornamentFloat 5s ease-in-out infinite}
-.opening-screen::before{top:9%;left:50%;transform:translateX(-50%)}.opening-screen::after{bottom:9%;left:50%;transform:translateX(-50%);animation-delay:-2.5s}
+.opening-screen{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;overflow-y:auto;padding:22px 16px;background:radial-gradient(ellipse at 50% 28%,#813246 0%,#4b1022 52%,#200710 100%);opacity:1;visibility:visible;transition:opacity .8s ease,visibility .8s ease;isolation:isolate}
+.opening-screen:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% 45%,rgba(247,202,112,.18),transparent 34%),linear-gradient(135deg,rgba(255,255,255,.035),transparent 45%,rgba(0,0,0,.2));pointer-events:none}
+.opening-screen::after{content:"✦  ❋  ✦";position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#e8c77e;letter-spacing:.8rem;font-size:20px;opacity:.5;pointer-events:none;animation:ornamentFloat 5s ease-in-out infinite}
 .opening-screen.is-open{opacity:0;visibility:hidden;pointer-events:none}
-.opening-content{width:min(460px,100%);text-align:center;color:#fff8e9;perspective:1200px;position:relative}
-.opening-blessing{font-family:var(--serif);font-size:14px;letter-spacing:.12em;color:#f1d89c;margin-bottom:20px}
-.envelope-scene{height:260px;position:relative;perspective:1000px;filter:drop-shadow(0 24px 28px rgba(0,0,0,.32));margin:0 auto 26px;width:min(360px,90vw)}
-.envelope-back{position:absolute;inset:42px 0 0;background:linear-gradient(135deg,#f8e8c2,#d9b46c);border-radius:12px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.7)}
-.envelope-letter{position:absolute;left:9%;right:9%;bottom:14px;height:180px;background:linear-gradient(145deg,#fffaf0,#f6e5c8);border:1px solid #d6b36b;border-radius:6px;color:#6b1d2a;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;transition:transform 1.15s cubic-bezier(.2,.8,.2,1),bottom 1.15s cubic-bezier(.2,.8,.2,1);box-shadow:0 3px 15px #56222b22}
-.envelope-letter .mini-om{font-size:28px;color:#b58a3d}.envelope-letter strong{font-family:var(--serif);font-size:clamp(23px,6vw,31px);font-weight:700;margin:6px 0}.envelope-letter span{font-size:14px;letter-spacing:.08em}
-.envelope-front{position:absolute;inset:42px 0 0;overflow:hidden;border-radius:12px;background:linear-gradient(145deg,#8f283a,#541321);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);border:1px solid #d9b46c}
-.envelope-flap{position:absolute;inset:42px 0 auto;height:150px;background:linear-gradient(160deg,#f7e5b9,#cda45a);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;backface-visibility:visible;transition:transform .85s ease;z-index:4;filter:drop-shadow(0 4px 4px #300b1533)}
-.envelope-seal{position:absolute;z-index:5;left:50%;top:145px;transform:translateX(-50%);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff0c4,#c79a49 70%);color:#69172a;font-size:25px;border:2px solid #f9e5ac;box-shadow:0 4px 12px #26091255;transition:opacity .35s ease,transform .35s ease}
-.opening-screen.opening .envelope-flap{transform:rotateX(180deg)}.opening-screen.opening .envelope-seal{opacity:0;transform:translateX(-50%) scale(.5)}.opening-screen.opening .envelope-letter{transform:translateY(-100px) scale(1.04);bottom:34px}
-.opening-title{font-family:var(--serif);font-size:clamp(28px,6vw,40px);font-weight:700;line-height:1.35;margin:0 0 7px;text-shadow:0 3px 18px #16050a55}.opening-subtitle{margin:0 0 23px;color:#f4dfb4;font-size:15px}
-.open-invite-btn{border:1px solid #ffe6a8;border-radius:999px;background:linear-gradient(135deg,#fff0c6,#d9b46c);color:#4b1420;padding:14px 26px;font-weight:800;font-size:16px;box-shadow:0 10px 26px #16050a55;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease}.open-invite-btn:hover{transform:translateY(-3px);box-shadow:0 15px 32px #16050a66}.open-invite-btn:focus-visible{outline:3px solid white;outline-offset:4px}
-@keyframes ornamentFloat{0%,100%{opacity:.35;letter-spacing:1.5rem}50%{opacity:.85;letter-spacing:1.8rem}}
+.opening-content{width:min(440px,100%);flex:0 0 auto;text-align:center;color:#fff8e9;perspective:1200px;position:relative;padding:18px 14px 34px;text-shadow:0 2px 14px rgba(0,0,0,.35);margin:auto}
+.opening-blessing{font-family:'Noto Serif Devanagari','Nirmala UI',serif;font-size:clamp(19px,3vw,24px);font-weight:700;letter-spacing:.025em;color:#fff0bd;margin:0 0 18px;text-shadow:0 2px 5px rgba(0,0,0,.45),0 0 20px rgba(255,205,105,.42)}
+.envelope-scene{cursor:pointer;outline:none;transition:filter .3s ease; height:280px;position:relative;perspective:1400px;filter:drop-shadow(0 22px 28px rgba(0,0,0,.42));margin:0 auto 22px;width:min(370px,86vw);isolation:isolate;transform:translateZ(0);overflow:visible}
+.envelope-scene:hover{filter:drop-shadow(0 0 18px rgba(245,207,120,.22))}.envelope-scene:focus-visible{outline:2px solid #ffe6a6;outline-offset:8px;border-radius:14px}.envelope-letter .mini-om{font-size:clamp(12px,2.7vw,17px);white-space:nowrap}.envelope-letter .letter-couple{font-family:var(--serif);font-size:clamp(15px,3.4vw,20px);color:#5a1425}.envelope-letter .letter-couple em{color:#b58a3d;font-style:italic}.envelope-letter .letter-date{font-size:11px;letter-spacing:.04em}.envelope-letter .letter-open-hint{margin-top:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#8c672b}.envelope-back{position:absolute;left:0;right:0;top:42px;bottom:0;background:linear-gradient(135deg,#fff0c9,#d5a84e);border-radius:12px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.7),0 14px 30px rgba(0,0,0,.18);z-index:0}
+.envelope-letter{position:absolute;left:8%;right:8%;bottom:-18px;height:166px;box-sizing:border-box;background:linear-gradient(145deg,#fffdf6,#f4dfb6);border:2px solid #d6b36b;border-radius:8px;color:#5a1425;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;transition:transform 1.05s cubic-bezier(.22,.78,.2,1),bottom 1.05s cubic-bezier(.22,.78,.2,1);box-shadow:0 3px 15px #56222b22;z-index:1;text-shadow:none}
+.envelope-letter .mini-om{font-family:'Noto Serif Devanagari','Nirmala UI',serif;font-size:25px;color:#b58a3d}.envelope-letter strong{font-family:var(--serif);font-size:clamp(22px,5vw,29px);font-weight:700;margin:5px 0}.envelope-letter span{font-size:13px;letter-spacing:.045em}
+.envelope-front{position:absolute;left:0;right:0;top:42px;bottom:0;overflow:hidden;border-radius:13px;background:linear-gradient(145deg,#92283d,#581321 75%);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);border:1px solid #e6c778;z-index:3;pointer-events:none;box-shadow:inset 0 0 0 2px rgba(255,224,155,.12)}
+.envelope-flap{position:absolute;left:0;right:0;top:42px;height:140px;background:linear-gradient(160deg,#fff3cb 0%,#e4c074 55%,#bd8b35 100%);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;transform:rotateX(0deg);transform-style:preserve-3d;backface-visibility:visible;transition:transform 1s cubic-bezier(.2,.75,.25,1);z-index:5;filter:drop-shadow(0 4px 4px #300b1533);pointer-events:none}
+.envelope-seal{position:absolute;z-index:6;left:50%;top:132px;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff0c4,#c79a49 70%);color:#69172a;font-size:23px;border:2px solid #f9e5ac;box-shadow:0 4px 12px #26091255;transition:opacity .28s ease,transform .35s ease;text-shadow:none}
+.opening-screen.opening .envelope-flap{transform:rotateX(180deg);z-index:2}
+.opening-screen.opening .envelope-seal{opacity:0;transform:translateX(-50%) scale(.55)}
+.opening-screen.opening .envelope-letter{transform:translateY(-128px) scale(1.035);bottom:28px;z-index:4;box-shadow:0 18px 38px rgba(0,0,0,.25)}
+.opening-title{font-family:var(--serif);font-size:clamp(27px,5.5vw,38px);font-weight:700;line-height:1.25;margin:0 0 5px;color:#fff3d2;text-shadow:0 3px 18px #16050a75}.opening-subtitle{margin:0 0 17px;color:#ffe9bf;font-size:14px;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.open-invite-btn{border:1px solid #ffe6a8;border-radius:999px;background:linear-gradient(135deg,#fff0c6,#d9b46c);color:#4b1420;padding:13px 25px;font-weight:800;font-size:15px;box-shadow:0 10px 26px #16050a55;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease}.open-invite-btn:hover{transform:translateY(-3px);box-shadow:0 15px 32px #16050a66}.open-invite-btn:focus-visible{outline:3px solid white;outline-offset:4px}.open-invite-btn:disabled{cursor:wait;opacity:.9}
+@keyframes ornamentFloat{0%,100%{opacity:.35;letter-spacing:.8rem}50%{opacity:.8;letter-spacing:1rem}}
+@media(max-width:480px){.opening-screen{padding:14px 12px}.opening-content{padding:12px 6px 30px}.envelope-scene{height:245px;width:min(320px,86vw)}.envelope-back,.envelope-front{top:36px}.envelope-flap{top:36px;height:122px}.envelope-letter{height:148px;bottom:-14px}.envelope-seal{top:112px}.opening-screen.opening .envelope-letter{transform:translateY(-104px) scale(1.025);bottom:24px}}
+@media(max-height:650px){.opening-screen{align-items:flex-start}.opening-content{margin:auto}.opening-blessing{margin-bottom:10px}.envelope-scene{height:220px;margin-bottom:12px}.envelope-back,.envelope-front{top:30px}.envelope-flap{top:30px;height:105px}.envelope-letter{height:132px;bottom:-12px}.envelope-seal{top:96px}.opening-title{font-size:27px}.opening-subtitle{margin-bottom:12px}.opening-screen.opening .envelope-letter{transform:translateY(-88px) scale(1.02);bottom:20px}}
 @media(prefers-reduced-motion:reduce){.opening-screen,.envelope-flap,.envelope-letter,.envelope-seal,.open-invite-btn{transition:none!important;animation:none!important}}
 
 
@@ -405,10 +409,10 @@ button { letter-spacing:.025em; }
 <body class="invite-locked">
 <div aria-label="विवाह Open Invitation" aria-modal="true" class="opening-screen" id="openingScreen" role="dialog">
 <div class="opening-content">
-<div class="opening-blessing">Shree Ganeshaya Namah</div>
-<div aria-hidden="true" class="envelope-scene">
+<div class="opening-blessing" lang="hi">॥ श्री गणेशाय नमः ॥</div>
+<div aria-label="Open the wedding invitation" class="envelope-scene" id="envelopeOpenCard" role="button" tabindex="0">
 <div class="envelope-back"></div>
-<div class="envelope-letter"><div class="mini-om">ॐ</div><strong>Wedding Invitation</strong><span>Vivek Weds Prachi</span><span style="margin-top:8px">20 November 2026</span></div>
+<div class="envelope-letter"><div class="mini-om">॥ श्री गणेशाय नमः ॥</div><strong>Wedding Invitation</strong><span class="letter-couple">Vivek <em>Weds</em> Prachi</span><span class="letter-date">20–21 November 2026</span><span class="letter-open-hint">✦ Tap to open ✦</span></div>
 <div class="envelope-front"></div><div class="envelope-flap"></div><div class="envelope-seal">❋</div>
 </div>
 <h1 class="opening-title">The Wedding</h1>
@@ -501,14 +505,21 @@ const openInviteButton=document.getElementById('openInviteButton');
 const heroCardImage=document.querySelector('.hero-art img');
 if(heroCardImage && document.getElementById('pinkCard')) heroCardImage.src=document.getElementById('pinkCard').src;
 function openInvitationExperience(){
- if(openingScreen.classList.contains('opening')) return;
+ if(openingScreen.classList.contains('opening') || openingScreen.classList.contains('is-open')) return;
  openingScreen.classList.add('opening');
  openInviteButton.disabled=true;
  openInviteButton.textContent='निमंत्रण खुल रहा है…';
- window.setTimeout(()=>{openingScreen.classList.add('is-open');document.body.classList.remove('invite-locked');document.getElementById('home').setAttribute('tabindex','-1');},1050);
- window.setTimeout(()=>{openingScreen.style.display='none';document.querySelector('.topnav a')?.focus({preventScroll:true});},1950);
+ // Let the flap open first, then allow the invitation card to rise before fading away.
+ const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const fadeDelay=reducedMotion?80:1450;
+ const hideDelay=reducedMotion?180:2250;
+ window.setTimeout(()=>{openingScreen.classList.add('is-open');document.body.classList.remove('invite-locked');document.getElementById('home')?.setAttribute('tabindex','-1');},fadeDelay);
+ window.setTimeout(()=>{openingScreen.style.display='none';document.querySelector('.topnav a')?.focus({preventScroll:true});},hideDelay);
 }
 openInviteButton.addEventListener('click',openInvitationExperience);
+const envelopeOpenCard=document.getElementById('envelopeOpenCard');
+envelopeOpenCard.addEventListener('click',openInvitationExperience);
+envelopeOpenCard.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openInvitationExperience();}});
 
 const cards={gold:{src:document.getElementById('goldCard').src,name:'वैवाहिक-Celebration Schedule-कार्ड.webp',caption:'वैवाहिक Celebration Schedule — 15 से 17 November 2026'},pink:{src:document.getElementById('pinkCard').src,name:'विवाह-निमंत्रण-कार्ड.webp',caption:'शुभ विवाह — 20 November एवं विदाई — 21 November 2026'}};
 let toastTimer;
@@ -526,6 +537,15 @@ function modalBackdrop(event){if(event.target===document.getElementById('cardMod
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCard()});
 const io=('IntersectionObserver'in window)?new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');io.unobserve(entry.target)}}),{threshold:.12}):null;
 document.querySelectorAll('.reveal').forEach(el=>{if(io)io.observe(el);else el.classList.add('visible')});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('body > *').forEach(function(node){
+    if(node.tagName === 'STYLE' || node.tagName === 'SCRIPT' || node.id === 'openingScreen' || node.tagName === 'NAV') return;
+    if(node.childElementCount === 0 && /Hindi-first invitation hero refinements|hindi-invitation-copy\s*\{max-width:600px/.test(node.textContent || '')) node.remove();
+  });
+});
 </script>
 </body>
 </html>
